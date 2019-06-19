@@ -1,0 +1,9 @@
+pandas
+lxml
+pyquery
+BeautifulSoup4
+pymysql
+tqdm
+twstock
+fake-useragent
+jupyter_contrib_nbextensions

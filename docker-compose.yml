@@ -1,0 +1,30 @@
+version: '2'
+networks:
+  fintech:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.25.99.0/24
+        gateway: 172.25.99.1
+
+services:
+  jupyter:
+    restart: ${restart_mode}
+    build: .
+    image: t985026/finlab-course:latest
+    container_name: Fintech-jupyter
+    command: /bin/bash -c "start-notebook.sh"
+    volumes:
+      - ${Jupyter_work_Dirs}:/home/jovyan/work
+      # - /etc/localtime:/etc/localtime:ro
+      - ${Jupyter_config}:/home/jovyan/.jupyter/jupyter_notebook_config.py:ro
+    environment:
+      - NB_UID=1000
+      - NB_GID=1000
+      - TIMEZONE=Taipei
+      - TZ=Asia/Taipei
+    networks:
+      fintech:
+        ipv4_address: ${jupyter_IP}
+    ports:
+      - "8888:8888"
