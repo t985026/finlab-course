@@ -22,7 +22,13 @@ pip install -r requirements.txt
 
 #conda install package
 COPY conda.txt .
-RUN conda install --quiet --yes --file conda.txt
+RUN conda install --quiet --yes \
+'dash==0.21.1' \
+'dash-renderer==0.13.0' \
+'dash-html-components==0.11.0' \
+'dash-core-components==0.23.0' \
+'conda-forge' \
+'nodejs'
 
 #安裝ta-lib
 RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz && \

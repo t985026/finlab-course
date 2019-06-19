@@ -17,8 +17,9 @@ services:
     volumes:
       - ${Jupyter_work_Dirs}:/home/jovyan/work
       # - /etc/localtime:/etc/localtime:ro
-      - ${Jupyter_config}:/home/jovyan/.jupyter/jupyter_notebook_config.py:ro
+      # - ${Jupyter_config}:/home/jovyan/.jupyter/jupyter_notebook_config.py:ro
     environment:
+      - JUPYTER_ENABLE_LAB=${enable_jupyter_lab}
       - NB_UID=1000
       - NB_GID=1000
       - TIMEZONE=Taipei
