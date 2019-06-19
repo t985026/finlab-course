@@ -15,7 +15,7 @@ services:
     container_name: Fintech-jupyter
     command: /bin/bash -c "start-notebook.sh"
     volumes:
-      - ${Jupyter_work_Dirs}:/home/jovyan/work
+      # - ${Jupyter_work_Dirs}:/home/jovyan/work
       # - /etc/localtime:/etc/localtime:ro
       # - ${Jupyter_config}:/home/jovyan/.jupyter/jupyter_notebook_config.py:ro
     environment:
