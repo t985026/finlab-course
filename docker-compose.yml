@@ -4,8 +4,8 @@ networks:
     driver: bridge
     ipam:
       config:
-      - subnet: 172.25.99.0/24
-        gateway: 172.25.99.1
+      - subnet: 172.26.99.0/24
+        gateway: 172.26.99.1
 
 services:
   jupyter:
@@ -13,10 +13,10 @@ services:
     build: .
     image: t985026/finlab-course:latest
     container_name: Fintech-jupyter
-    command: /bin/bash -c "start-notebook.sh"
+    command: /bin/bash -c "start-notebook.sh --NotebookApp.token=''"
     volumes:
-      # - ${Jupyter_work_Dirs}:/home/jovyan/work
-      # - /etc/localtime:/etc/localtime:ro
+      - ${Jupyter_work_Dirs}:/home/jovyan/work
+      - /etc/localtime:/etc/localtime:ro
       # - ${Jupyter_config}:/home/jovyan/.jupyter/jupyter_notebook_config.py:ro
     environment:
       - JUPYTER_ENABLE_LAB=${enable_jupyter_lab}
