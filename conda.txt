@@ -2,3 +2,15 @@ dash==0.21.1
 dash-renderer==0.13.0
 dash-html-components==0.11.0
 dash-core-components==0.23.0
+bottleneck=1.2.1
+keras
+tensorflow-gpu
+pandas 
+requests 
+tqdm 
+seaborn 
+ipykernel 
+keras 
+lightgbm 
+ipywidgets 
+lxml
