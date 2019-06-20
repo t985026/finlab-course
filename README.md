@@ -5,7 +5,7 @@
 * requests
 * BeautifulSoup4
 * [pyquery](https://aji.tw/slides/pycon2017 "投影片")
-* Scrapy
+* fake-useragent useragent偽裝
 
 (資料分析)
 * pandas  
@@ -26,6 +26,9 @@
 * talib
 * twstock
 
+(ML)
+* keras
+* tensorflow-gpu
 
 啟動方式(Linux):  
 ```shell
@@ -38,4 +41,4 @@ t985026/finlab-course start-notebook.sh \
 ```
 
 可添增參數
-`--notebookApp.password='密碼'`
+* --notebookApp.password='密碼'
